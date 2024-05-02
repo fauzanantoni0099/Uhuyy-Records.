@@ -58,10 +58,10 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="{{'/'}}">Home</a></li>
-                                    <li><a href="{{'albums'}}">Albums</a></li>
-                                    <li><a href="{{'event'}}">Events</a></li>
-                                    <li><a href="{{'about'}}">About</a></li>
-                                    <li><a href="{{'contact'}}">Contact</a></li>
+                                    <li><a href="{{route('albums')}}">Albums</a></li>
+                                    <li><a href="{{route('event')}}">Events</a></li>
+                                    <li><a href="{{route('about')}}">about</a></li>
+                                    <li><a href="{{route('contact')}}">Contact</a></li>
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->

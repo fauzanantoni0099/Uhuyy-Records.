@@ -16,11 +16,13 @@
                     <!-- Single Post Start -->
                     <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Post Thumb -->
+                        <center>
                         <div class="blog-post-thumb mt-30">
                             @foreach($artist->images as $image)
-                            <a href="#"><img src="/{{$image->name_path}}" alt=""></a>
+                            <a href="#"><img src="/{{$image->name_path}}" alt="" width="700px"></a>
                             @endforeach
                         </div>
+                        </center>
 
                         <!-- Blog Content -->
                         <div class="blog-content">

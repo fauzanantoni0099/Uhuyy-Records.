@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -190,7 +191,15 @@ class EventController extends Controller
     {
         try {
             $event->delete();
-            $event->images()->delete();
+            foreach ($event->images as $image) {
+                // Hapus gambar dari penyimpanan
+                if (Storage::exists($image->name_path)) {
+                    Storage::delete($image->name_path);
+                }
+
+                // Hapus entri gambar dari database
+                $image->delete();
+            }
 
             toast('Data berhasil dihapus!!','succes');
             DB::commit();

@@ -6,6 +6,7 @@ use App\Album;
 use App\Artist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AlbumController extends Controller
 {
@@ -196,7 +197,15 @@ class AlbumController extends Controller
     {
         try {
             $album->delete();
-            $album->images()->delete();
+            foreach ($album->images as $image) {
+                // Hapus gambar dari penyimpanan
+                if (Storage::exists($image->name_path)) {
+                    Storage::delete($image->name_path);
+                }
+
+                // Hapus entri gambar dari database
+                $image->delete();
+            }
             toast('Data berhasil dihapus!!!','success');
             DB::commit();
             return redirect()->route('album.index');

@@ -17,9 +17,10 @@
                     <!-- Single Post Start -->
                     <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Post Thumb -->
+                        <center>
                         <div class="blog-post-thumb mt-30">
                             @foreach($album->images as $image)
-                            <img src="/{{$image->name_path}}" alt="">
+                            <img src="/{{$image->name_path}}" alt="" width="700px">
                             @endforeach
                             <!-- Post Date -->
                             <div class="post-date">
@@ -27,6 +28,7 @@
                                 <span>{{\Carbon\Carbon::parse($album->release)->isoFormat('MMM Y')}}</span>
                             </div>
                         </div>
+                        </center>
 
                         <!-- Blog Content -->
                         <div class="blog-content">

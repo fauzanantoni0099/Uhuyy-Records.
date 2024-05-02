@@ -8,6 +8,7 @@ use App\File;
 use App\Song;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class SongController extends Controller
 {
@@ -195,7 +196,15 @@ class SongController extends Controller
     {
         try {
             $song->delete();
-            $song->files()->delete();
+            foreach ($song->files as $file) {
+                // Hapus gambar dari penyimpanan
+                if (Storage::exists($file->name_path)) {
+                    Storage::delete($file->name_path);
+                }
+
+                // Hapus entri gambar dari database
+                $file->delete();
+            }
             toast('Data berhasil dihapus!!','success');
             DB::commit();
             return back();

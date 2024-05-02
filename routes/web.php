@@ -28,8 +28,8 @@ Route::get('/event','FrontController@event')->name('event');
 Route::get('/blank', function () {
     return view('back.blank');
 });
-Route::get('/{album}', 'FrontController@show')->name('show');
-Route::get('/{artist}', 'FrontController@showArtist')->name('showArtist');
+Route::get('/album/{album}', 'FrontController@show')->name('show');
+Route::get('/artist/{artist}', 'FrontController@showArtist')->name('showArtist');
 Route::post('/message', 'MessageController@store')->name('message.store');
 
 

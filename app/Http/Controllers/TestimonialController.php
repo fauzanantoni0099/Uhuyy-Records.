@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
 {
@@ -179,8 +180,15 @@ class TestimonialController extends Controller
     {
         try {
             $testimonial->delete();
-            $testimonial->images()->delete();
-            toast('Data berhasil dihapus!!','success');
+            foreach ($testimonial->images as $image) {
+                // Hapus gambar dari penyimpanan
+                if (Storage::exists($image->name_path)) {
+                    Storage::delete($image->name_path);
+                }
+
+                // Hapus entri gambar dari database
+                $image->delete();
+            }            toast('Data berhasil dihapus!!','success');
             DB::commit();
             return redirect()->route('testimonial.index',compact('testimonial'));
         }
