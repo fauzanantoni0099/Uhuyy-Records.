@@ -52,16 +52,16 @@
                         </div>
                         <!-- Testimonial Slide -->
                         <div class="testimonials-slide owl-carousel">
-                            @foreach($testimonis as $testimoni)
+                            @foreach($testimonials as $testimonial)
                                 <div class="single-slide">
-                                    <p>{{$testimoni->note}}</p>
+                                    <p>{{$testimonial->note}}</p>
                                     <div class="testimonial-info d-flex align-items-center">
                                         <div class="testimonial-thumb">
-                                            @foreach($testimoni->images as $image)
+                                            @foreach($testimonial->images as $image)
                                             <img src="/{{$image->name_path}}" alt="">
                                             @endforeach
                                         </div>
-                                        <p>{{$testimoni->name}}, {{$testimoni->job}}</p>
+                                        <p>{{$testimonial->name}}, {{$testimonial->job}}</p>
                                     </div>
                                 </div>
                             @endforeach
