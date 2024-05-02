@@ -7,6 +7,7 @@ use App\Artist;
 use App\Event;
 use App\Song;
 use App\Testimoni;
+use App\Testimonial;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -35,9 +36,9 @@ class FrontController extends Controller
     }
     public function event()
     {
-        $testimonis = Testimoni::all();
+        $testimonials = Testimonial::all();
         $events = Event::all();
-        return view('front.event',compact('events','testimonis'));
+        return view('front.event',compact('events','testimonials'));
     }
     public function blog()
     {
