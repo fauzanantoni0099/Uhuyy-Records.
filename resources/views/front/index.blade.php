@@ -108,7 +108,22 @@
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(img/bg-img/123.jpg);"></div>
+                <div class="slide-img bg-img" style="background-image: url(img/bg-img/2.jpg);"></div>
+                <!-- Slide Content -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero-slides-content text-center">
+                                <h2 data-animation="fadeInUp" data-delay="300ms">No Matter Your Music Are <span>No Matter Your Music Are</span></h2>
+                                <a data-animation="fadeInUp" data-delay="500ms" href="{{route('contact')}}" class="btn oneMusic-btn mt-50">Contact Us<i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url(img/bg-img/3.jpg);"></div>
                 <!-- Slide Content -->
                 <div class="container">
                     <div class="row">
@@ -204,7 +219,7 @@
     <!-- ##### Buy Now Area End ##### -->
 
     <!-- ##### Featured Artist Area Start ##### -->
-    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/vexed-2.jpg);">
+    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/4.jpg);">
         <div class="container">
             @foreach($songNew as $song)
             <div class="row align-items-end">
@@ -253,7 +268,7 @@
                             <h2>This week’s top</h2>
                         </div>
                         @foreach($albums as $key=>$album)
-                            @if($key < 5)
+                            @if($key < 4)
                                 <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms">
                                     <div class="thumbnail">
                                         @foreach($album->images as $image)
@@ -280,7 +295,7 @@
 
                         <!-- Single Top Item -->
                         @foreach($songs as $key=>$song)
-                            @if($key < 5)
+                            @if($key < 4)
                                 <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="100ms">
                                     <div class="first-part d-flex align-items-center">
                                         @foreach($song->artist->images as $image)
@@ -314,7 +329,7 @@
 
                         <!-- Single Artist -->
                         @foreach($artists as $key=>$artist )
-                            @if($key < 5)
+                            @if($key < 4)
                             <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
                                 <div class="thumbnail">
                                     @foreach($artist->images as $image)
