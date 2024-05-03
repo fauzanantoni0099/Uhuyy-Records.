@@ -17,9 +17,9 @@
             </div>
             <div class="col-12 col-lg-6">
                 <center>
-                    <p style="font-size: 27px">Founded in 2021 in the city of Padangpanjang, in 2023 the Studio moved to Bukittinggi
-                        Uhuyy Records is based on home recording production, mixing and mastering, but also produces for various purposes
-                        audio such as, Film Scoring, Advertising, Voice Over and others</p>
+                    <p style="font-size: 25px">"Uhuyy Records is a recording studio based on home recording and also an independent label.
+                        Uhuyy records are not limited to genres in producing and releasing music.
+                        We will be happy to serve you any audio masterpiece. Make your masterpiece with us because we are all friends"</p>
                 </center>
             </div>
             <div class="col-12">
@@ -33,12 +33,14 @@
                 <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
                     <!-- single accordian area -->
                     <div class="panel single-accordion">
-                        <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Records.
+                        <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">recording
                                 <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                 <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
                             </a></h6>
                         <div id="collapseOne" class="accordion-content collapse show">
-                            <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
+                            <p>Recording is the process of recording a sound, in practice sound recording is done directly.
+                                For example, simply if we want to record a sound from an electric guitar, we input the output from the guitar/effect into the sound card input.
+                                Likewise for other instruments.</p>
                         </div>
                     </div>
                     <!-- single accordian area -->
@@ -50,10 +52,17 @@
                             </a>
                         </h6>
                         <div id="collapseTwo" class="accordion-content collapse">
-                            <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
+                            <p>Mastering, a form of audio post production, is the process of preparing and transferring recorded audio from a source containing the final mix to a data storage device (the master)
+                                The purpose of mastering is to balance the sonic elements of a stereo mix and optimize playback across all systems and media formats.
+                                Traditionally, mastering is done using tools like equalization, compression, limiting and stereo enhancement.
+                                Mastering is the final polish that turns a finished mix into a release that’s ready for listeners to experience on all devices</p>
                         </div>
                     </div>
                     <!-- single accordian area -->
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel single-accordion">
                         <h6>
                             <a role="button" aria-expanded="true" aria-controls="collapseThree" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Mixing
@@ -62,55 +71,71 @@
                             </a>
                         </h6>
                         <div id="collapseThree" class="accordion-content collapse">
-                            <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
+                            <p>The goal of mixing is to bring out the best in your multi-track recording by adjusting levels, panning, and audio effects for each individual track. The aim is to sculpt your arrangement to make sense of all your sounds in relation to each other.
+                                A multi-track recording refers to a technique in which each sound source is recorded on its own. When blended together, individual tracks can be manipulated without altering the characteristics of other sounds.
+                                The final output of a multitrack recording is known as the mixdown. This is the last step before mastering, where the finished mix is prepared for the medium where it will be released.
+                                Mixing is both a technical process and a creative art form. It has a significant effect on the sonic texture and aesthetic experience of the music.</p>
                         </div>
                     </div>
+                    <div class="panel single-accordion">
+                        <h6>
+                            <a role="button" aria-expanded="true" aria-controls="collapseFour" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">Music Scoring Film
+                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                            </a>
+                        </h6>
+                        <div id="collapseFour" class="accordion-content collapse">
+                            <p>The role of music/audio as providing atmosphere in films is often called scoring.
+                                Music scoring is one way to make the scenes in a film more alive by placing a suitable musical composition, so that it can provide the right atmosphere in the film.</p>
+                        </div>
+                    </div>
+                    <!-- single accordian area -->
                 </div>
             </div>
 
             <!-- ##### Tabs ##### -->
-            <div class="col-12 col-lg-6">
-                <div class="oneMusic-tabs-content">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link" id="tab--1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false">Mauris gravida neque</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="tab--2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Pellentesque sit</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" id="tab--3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="true">Quisque fringilla</a>
-                        </li>
-                    </ul>
+{{--            <div class="col-12 col-lg-6">--}}
+{{--                <div class="oneMusic-tabs-content">--}}
+{{--                    <ul class="nav nav-tabs" id="myTab" role="tablist">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" id="tab--1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false">Mauris gravida neque</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" id="tab--2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Pellentesque sit</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link active" id="tab--3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="true">Quisque fringilla</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
 
-                    <div class="tab-content mb-100" id="myTabContent">
-                        <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab--1">
-                            <div class="oneMusic-tab-content">
-                                <!-- Tab Text -->
-                                <div class="oneMusic-tab-text">
-                                    <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab--2">
-                            <div class="oneMusic-tab-content">
-                                <!-- Tab Text -->
-                                <div class="oneMusic-tab-text">
-                                    <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade show active" id="tab3" role="tabpanel" aria-labelledby="tab--3">
-                            <div class="oneMusic-tab-content">
-                                <!-- Tab Text -->
-                                <div class="oneMusic-tab-text">
-                                    <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--                    <div class="tab-content mb-100" id="myTabContent">--}}
+{{--                        <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab--1">--}}
+{{--                            <div class="oneMusic-tab-content">--}}
+{{--                                <!-- Tab Text -->--}}
+{{--                                <div class="oneMusic-tab-text">--}}
+{{--                                    <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab--2">--}}
+{{--                            <div class="oneMusic-tab-content">--}}
+{{--                                <!-- Tab Text -->--}}
+{{--                                <div class="oneMusic-tab-text">--}}
+{{--                                    <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="tab-pane fade show active" id="tab3" role="tabpanel" aria-labelledby="tab--3">--}}
+{{--                            <div class="oneMusic-tab-content">--}}
+{{--                                <!-- Tab Text -->--}}
+{{--                                <div class="oneMusic-tab-text">--}}
+{{--                                    <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
         </div>
     </div>
