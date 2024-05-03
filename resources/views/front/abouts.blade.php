@@ -25,7 +25,7 @@
             <div class="col-12">
                 <div class="elements-title mb-70">
                     <center>
-                    <h2>Track</h2>
+                    <h2>Service</h2>
                     </center>
                 </div>
             </div>
