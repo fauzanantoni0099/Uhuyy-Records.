@@ -329,7 +329,7 @@
 
                         <!-- Single Artist -->
                         @foreach($artists as $key=>$artist )
-                            @if($key < 4)
+                            @if($key < 5)
                             <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
                                 <div class="thumbnail">
                                     @foreach($artist->images as $image)
