@@ -14,9 +14,9 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $artists = Artist::latest();
-        $albums = Album::latest();
-        $songs = Song::latest();
+        $artists = Artist::latest()->get();
+        $albums = Album::latest()->get();
+        $songs = Song::latest()->get();
         $songNew = Song::latest()->take(1)->get();
 
         return view('front.index',compact('artists','albums','songs','songNew'));
