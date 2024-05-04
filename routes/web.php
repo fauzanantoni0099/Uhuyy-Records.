@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function (){
         Route::resource('song', 'SongController');
         Route::resource('album', 'AlbumController');
         Route::resource('event', 'EventController');
-        Route::resource('testimoni', 'TestimoniController');
+        Route::resource('testimonial', 'TestimonialController');
         Route::get('/message','MessageController@index')->name('message.index');
         Route::delete('/{message}', 'MessageController@destroy')->name('message.destroy');
 

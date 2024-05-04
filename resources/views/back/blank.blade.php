@@ -66,8 +66,8 @@
         <div class="sidebar">
             <!-- Start Logobar -->
             <div class="logobar">
-                <a href="index.html" class="logo logo-large"><img src="/img/core-img/logow.png" class="img-fluid" alt="logo"></a>
-                <a href="index.html" class="logo logo-small"><img src="/img/core-img/logow.png" class="img-fluid" alt="logo"></a>
+                <a href="{{'/home'}}" class="logo logo-large"><img src="/img/core-img/logow.png" class="img-fluid" alt="logo"></a>
+                <a href="{{'/home'}}" class="logo logo-small"><img src="/img/core-img/logow.png" class="img-fluid" alt="logo"></a>
             </div>
             <!-- End Logobar -->
             <!-- Start Profilebar -->
@@ -81,29 +81,32 @@
             <!-- Start Navigationbar -->
             <div class="navigationbar">
                 <ul class="vertical-menu">
-                    <li class="vertical-header">Main</li>
-                    <li>
-                        <a href="{{route('artist.index')}}">
+                    <li><a href="{{route('artist.index')}}">
                             <img src="/back/assets/images/svg-icon/dashboard.svg">
                             <span>Artists</span>
                         </a>
-                        <a href="{{route('album.index')}}">
+                    </li>
+                    <li><a href="{{route('album.index')}}">
                             <img src="/back/assets/images/svg-icon/layouts.svg">
                             <span>Albums</span>
                         </a>
-                        <a href="{{route('song.index')}}">
+                    </li>
+                    <li><a href="{{route('song.index')}}">
                             <img src="/back/assets/images/svg-icon/app.svg">
                             <span>Songs</span>
                         </a>
-                        <a href="{{route('event.index')}}">
+                    </li>
+                    <li><a href="{{route('event.index')}}">
                             <img src="/back/assets/images/svg-icon/widgets.svg">
                             <span>Events</span>
                         </a>
-                        <a href="{{route('testimoni.index')}}">
+                    </li>
+                    <li><a href="{{route('testimonial.index')}}">
                             <img src="/back/assets/images/svg-icon/basic.svg">
                             <span>Testimonial</span>
                         </a>
-                        <a href="{{route('message.index')}}">
+                    </li>
+                    <li><a href="{{route('message.index')}}">
                             <img src="/back/assets/images/svg-icon/email.svg">
                             <span>Message</span>
                         </a>
@@ -201,7 +204,7 @@
         <!-- Start Footerbar -->
         <div class="footerbar">
             <footer class="footer">
-                <p class="mb-0">© 2020 Theta - All Rights Reserved.</p>
+                <p class="mb-0">© 2024   UhuyyRecords - Taffy Developer.</p>
             </footer>
         </div>
         <!-- End Footerbar -->

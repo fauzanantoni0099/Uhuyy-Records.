@@ -162,7 +162,7 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-8">
-                            <label>Photo Albums</label>
+                            <label>Upload Song</label>
                             <input type="file" name="name_path" class="form-control">
                         </div>
                 </div>
