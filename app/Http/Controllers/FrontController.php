@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Album;
 use App\Artist;
 use App\Event;
+use App\Gallery;
 use App\Song;
 use App\Testimoni;
 use App\Testimonial;
@@ -32,13 +33,16 @@ class FrontController extends Controller
     }
     public function about()
     {
-        return view('front.abouts');
+        $testimonials = Testimonial::all();
+
+        return view('front.abouts',compact('testimonials'));
     }
     public function event()
     {
+        $galleries = Gallery::all();
         $testimonials = Testimonial::all();
         $events = Event::all();
-        return view('front.event',compact('events','testimonials'));
+        return view('front.event',compact('events','galleries','testimonials'));
     }
     public function blog()
     {
@@ -51,5 +55,9 @@ class FrontController extends Controller
     public function showArtist(Artist $artist)
     {
         return view('front.showArtist',compact('artist'));
+    }
+    public function showEvent(Event $event)
+    {
+        return view('front.showEvent',compact('event'));
     }
 }

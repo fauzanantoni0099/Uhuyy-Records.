@@ -12,4 +12,8 @@ class Event extends Model
     {
         return $this->morphMany(Image::class,'imageable');
     }
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class);
+    }
 }

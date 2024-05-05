@@ -6,11 +6,11 @@ use App\Album;
 use App\Artist;
 use App\Event;
 use App\Gallery;
-use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
-class ImageController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -32,7 +32,7 @@ class ImageController extends Controller
             $galleries = Gallery::latest()->paginate();
         }
 
-        return view('back.albums.index',compact('albums','artists','events','galleries'));
+        return view('back.galleries.index',compact('albums','artists','events','galleries'));
     }
 
     /**
@@ -55,10 +55,10 @@ class ImageController extends Controller
     {
         try {
             $message = [
-              'required'=>'Wajib Diisi!!'
+                'required'=>'Wajib Diisi!!'
             ];
             $request->validate([
-              'name_path'=>'required|mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
+                'name_path'=>'required|mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
             $gallery = Gallery::create([
                 'event_id'=>$request->input('event_id') ?: null,
@@ -106,10 +106,10 @@ class ImageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Image  $image
+     * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function show(Image $image)
+    public function show(Gallery $gallery)
     {
         //
     }
@@ -117,10 +117,10 @@ class ImageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Image  $image
+     * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function edit(Image $image)
+    public function edit(Gallery $gallery)
     {
         //
     }
@@ -129,10 +129,10 @@ class ImageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Image  $image
+     * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Image $image)
+    public function update(Request $request, Gallery $gallery)
     {
         try {
             $message = [
@@ -141,7 +141,7 @@ class ImageController extends Controller
             $request->validate([
                 'name_path'=>'required|mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
-            $image->update([
+            $gallery->update([
                 'event_id'=>$request->input('event_id') ?: null,
                 'album_id'=>$request->input('album_id') ?: null,
                 'artist_id'=>$request->input('artist_id') ?: null,
@@ -173,13 +173,13 @@ class ImageController extends Controller
 
             }
             DB::commit();
-            toast('Data berhasil ditambah','success');
+            toast('Data berhasil diupdate','success');
             return redirect()->route('gallery.index',compact('gallery'));
         }
         catch (\Exception $exception)
         {
             DB::rollBack();
-            toast('Data gagal ditambah!!','error');
+            toast('Data gagal diupdate!!','error');
             return back();
         }
     }
@@ -187,11 +187,31 @@ class ImageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Image  $image
+     * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Image $image)
+    public function destroy(Gallery $gallery)
     {
-        //
+        try {
+            $gallery->delete();
+            foreach ($gallery->images as $image) {
+                // Hapus gambar dari penyimpanan
+                if (Storage::exists($image->name_path)) {
+                    Storage::delete($image->name_path);
+                }
+
+                // Hapus entri gambar dari database
+                $image->delete();
+            }
+            toast('Data berhasil dihapus!!!','success');
+            DB::commit();
+            return redirect()->route('album.index');
+        }
+        catch (\Exception $exception)
+        {
+            toast('Data gagal dihapus!!!','error');
+            DB::rollBack();
+            return back();
+        }
     }
 }

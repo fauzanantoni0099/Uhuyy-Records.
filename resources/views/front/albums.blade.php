@@ -20,7 +20,7 @@
                         <center>
                         <div class="blog-post-thumb mt-30">
                             @foreach($album->images as $image)
-                            <img src="/{{$image->name_path}}" alt="" width="700px">
+                            <img src="/{{$image->name_path}}" alt="" width="7   00px">
                             @endforeach
                             <!-- Post Date -->
                             <div class="post-date">

@@ -75,7 +75,7 @@
             <!-- End Logobar -->
             <!-- Start Profilebar -->
             <div class="profilebar text-center">
-                <img src="/img/core-img/uhuy.png" class="img-fluid" alt="profile" style="width: 150px">
+                <img src="/img/core-img/uhuy.png" class="img-fluid" alt="profile" style="width: 80px">
                 <div class="profilename">
                     <h5 class="text-white">{{Auth::user()->name}}</h5>
                 </div>
@@ -84,36 +84,29 @@
             <!-- Start Navigationbar -->
             <div class="navigationbar">
                 <ul class="vertical-menu">
-                    <li><a href="{{route('artist.index')}}">
-                            <img src="/back/assets/images/svg-icon/dashboard.svg">
-                            <span>Artists</span>
+                    <li class="vertical-header">Master</li>
+                    <li>
+                        <a href="javaScript:void();">
+                            <img src="/back/assets/images/svg-icon/dashboard.svg" class="img-fluid" alt="dashboard"><span>Dashboard</span><i class="feather icon-chevron-right pull-right"></i>
                         </a>
+                        <ul class="vertical-submenu">
+                            <li><a href="{{route('artist.index')}}"><i class="mdi mdi-circle"></i>Artist</a></li>
+                            <li><a href="{{route('album.index')}}"><i class="mdi mdi-circle"></i>Albums</a></li>
+                            <li><a href="{{route('song.index')}}"><i class="mdi mdi-circle"></i>Songs</a></li>
+                        </ul>
                     </li>
-                    <li><a href="{{route('album.index')}}">
-                            <img src="/back/assets/images/svg-icon/layouts.svg">
-                            <span>Albums</span>
+                    <li>
+                        <a href="javaScript:void();">
+                            <img src="/back/assets/images/svg-icon/layouts.svg" class="img-fluid" alt="layouts"><span>Layouts</span><i class="feather icon-chevron-right pull-right"></i>
                         </a>
+                        <ul class="vertical-submenu">
+                            <li><a href="{{route('event.index')}}"><i class="mdi mdi-circle"></i>Events</a></li>
+                            <li><a href="{{route('testimonial.index')}}"><i class="mdi mdi-circle"></i>Testimonials</a></li>
+                            <li><a href="{{route('message.index')}}"><i class="mdi mdi-circle"></i>Messages</a></li>
+                            <li><a href="{{route('gallery.index')}}"><i class="mdi mdi-circle"></i>Gallery</a></li>
+                        </ul>
                     </li>
-                    <li><a href="{{route('song.index')}}">
-                            <img src="/back/assets/images/svg-icon/app.svg">
-                            <span>Songs</span>
-                        </a>
-                    </li>
-                    <li><a href="{{route('event.index')}}">
-                            <img src="/back/assets/images/svg-icon/widgets.svg">
-                            <span>Events</span>
-                        </a>
-                    </li>
-                    <li><a href="{{route('testimonial.index')}}">
-                            <img src="/back/assets/images/svg-icon/basic.svg">
-                            <span>Testimonial</span>
-                        </a>
-                    </li>
-                    <li><a href="{{route('message.index')}}">
-                            <img src="/back/assets/images/svg-icon/email.svg">
-                            <span>Message</span>
-                        </a>
-                    </li>
+
                 </ul>
             </div>
             <!-- End Navigationbar -->

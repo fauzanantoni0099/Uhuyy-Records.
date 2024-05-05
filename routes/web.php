@@ -30,6 +30,7 @@ Route::get('/blank', function () {
 });
 Route::get('/album/{album}', 'FrontController@show')->name('show');
 Route::get('/artist/{artist}', 'FrontController@showArtist')->name('showArtist');
+Route::get('/event/{event}', 'FrontController@showEvent')->name('showEvent');
 Route::post('/message', 'MessageController@store')->name('message.store');
 
 
@@ -39,6 +40,7 @@ Route::middleware(['auth'])->group(function (){
         Route::resource('artist', 'ArtistController');
         Route::resource('song', 'SongController');
         Route::resource('album', 'AlbumController');
+        Route::resource('gallery', 'GalleryController');
         Route::resource('event', 'EventController');
         Route::resource('testimonial', 'TestimonialController');
         Route::get('/message','MessageController@index')->name('message.index');
