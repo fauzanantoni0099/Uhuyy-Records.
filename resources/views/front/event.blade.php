@@ -26,7 +26,11 @@
                             <h4>{{$event->name}}</h4>
                             <div class="event-meta-data">
                                 <a href="#" class="event-place">{{$event->location}}</a>
+                                @if($event->date == null)
+                                    <a href="">-</a>
+                                @else
                                 <a href="#" class="event-date">{{\Carbon\Carbon::parse($event->date)->isoFormat('MMMM D, Y')}}</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -54,7 +58,11 @@
                         <div class="testimonials-slide owl-carousel">
                             @foreach($testimonials as $testimonial)
                                 <div class="single-slide">
-                                    <p>{{$testimonial->note}}</p>
+                                    @if($testimonial->note == null)
+                                        <p> - </p>
+                                    @else
+                                        <p>{{$testimonial->note}}</p>
+                                    @endif
                                     <div class="testimonial-info d-flex align-items-center">
                                         <div class="testimonial-thumb">
                                             @foreach($testimonial->images as $image)

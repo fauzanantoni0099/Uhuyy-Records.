@@ -46,6 +46,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+
         try {
             $message = [
                 'required'=>'Wajib Diisi'
@@ -53,13 +54,12 @@ class EventController extends Controller
             $request->validate([
                 'name'=>'required',
                 'location'=>'required',
-                'date'=>'required',
                 'name_path'=>'required|mimes:jpeg,png,jpg,JPG,JPEG,PNG'
             ],$message);
             $event = Event::create([
                 'name'=>$request->name,
                 'location'=>$request->location,
-                'date'=>$request->date,
+                'date'=>$request->input('date') ?: null,
                 'note'=>$request->input('note') ?: null
             ]);
             if ($request->name_path)
@@ -136,13 +136,12 @@ class EventController extends Controller
             $request->validate([
                 'name'=>'required',
                 'location'=>'required',
-                'date'=>'required',
                 'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG,PNG'
             ],$message);
             $event->update([
                 'name'=>$request->name,
                 'location'=>$request->location,
-                'date'=>$request->date,
+                'date'=>$request->input('date') ?: null,
                 'note'=>$request->input('note') ?: null
             ]);
             if ($request->name_path)

@@ -69,7 +69,6 @@
                             <td>{{$loop->iteration +$startIndex}}</td>
                             <td>{{$event->name}}</td>
                             <td>{{$event->location}}</td>
-                            <td>{{\Carbon\Carbon::parse($event->date)->isoFormat('D MMM Y')}}</td>
                             <td>{{$event->note}}</td>
                             <td>@forelse($event->images as $image)
                                     <img src="/{{$image->name_path}}" class="card-img h-100" alt="Card image" style="width: 200px">
@@ -128,13 +127,6 @@
                         <div class="form-group col-md-4">
                             <input type="text" name="location" class="form-control @error('location') is-invalid @enderror" placeholder="Masukkan Lokasi Acara">
                             @error('location')
-                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Date Event : </label>
-                            <input type="date" name="date" class="form-control @error('date') is-invalid @enderror">
-                            @error('date')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
