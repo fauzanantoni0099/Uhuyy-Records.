@@ -205,7 +205,7 @@ class GalleryController extends Controller
             }
             toast('Data berhasil dihapus!!!','success');
             DB::commit();
-            return redirect()->route('album.index');
+            return redirect()->route('gallery.index');
         }
         catch (\Exception $exception)
         {
