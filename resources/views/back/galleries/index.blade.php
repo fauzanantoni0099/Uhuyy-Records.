@@ -79,8 +79,8 @@
                                 <div class="form-group">
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$gallery->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
-                                    <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#showModal-{{$gallery->id}}"
-                                       id="#myBtn" ><i class="feather icon-eye"></i></a>
+{{--                                    <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#showModal-{{$gallery->id}}"--}}
+{{--                                       id="#myBtn" ><i class="feather icon-eye"></i></a>--}}
                                     <form action="{{route('gallery.destroy',$gallery)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')

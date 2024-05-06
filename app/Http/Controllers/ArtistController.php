@@ -57,7 +57,7 @@ class ArtistController extends Controller
                 'name'=>'required',
                 'genre'=>'required',
                 'address'=>'required',
-                'name_path'=>'required|mimes:jpeg,png,jpg,JPG,JPEG'
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
 
             $artist = Artist::create([
@@ -142,7 +142,7 @@ class ArtistController extends Controller
                 'name'=>'required',
                 'genre'=>'required',
                 'address'=>'required',
-                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG'
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
 
             $artist->update([

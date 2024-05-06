@@ -85,8 +85,8 @@
                                 <div class="form-group">
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$event->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
-                                    <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#showModal-{{$event->id}}"
-                                       id="#myBtn" ><i class="feather icon-eye"></i></a>
+{{--                                    <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#showModal-{{$event->id}}"--}}
+{{--                                       id="#myBtn" ><i class="feather icon-eye"></i></a>--}}
                                     <form action="{{route('event.destroy',$event)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
@@ -151,6 +151,7 @@
                         <div class="form-group col-md-8">
                             <label>Photo Albums</label>
                             <input type="file" name="name_path" class="form-control">
+                            <label style="font-size: 10px" >MAX:2048 | jpeg,png,jpg</label>
                         </div>
                 </div>
                 <div class="modal-footer">

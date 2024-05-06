@@ -53,7 +53,7 @@ class TestimonialController extends Controller
                 'name'=>'required',
                 'job'=>'required',
                 'note'=>'required',
-                'name_path'=>'required|mimes:jpeg,png,jpg,JPG,JPEG,PNG'
+                'name_path'=>'required|mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
             $testimonial = Testimonial::create([
                 'name'=>$request->name,
@@ -130,7 +130,7 @@ class TestimonialController extends Controller
                 'name'=>'required',
                 'job'=>'required',
                 'note'=>'required',
-                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG,PNG'
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
             $testimonial->update([
                 'name'=>$request->name,

@@ -42,6 +42,7 @@
                         <div class="form-group col-md-8">
                             <label>Photo Albums</label>
                             <input type="file" name="name_path" class="form-control">
+                            <label style="font-size: 10px" >MAX:2048 | jpeg,png,jpg</label>
                         </div>
                     </div>
                     <div class="modal-footer">

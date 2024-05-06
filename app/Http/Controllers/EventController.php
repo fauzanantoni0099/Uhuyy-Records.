@@ -54,7 +54,7 @@ class EventController extends Controller
             $request->validate([
                 'name'=>'required',
                 'location'=>'required',
-                'name_path'=>'required|mimes:jpeg,png,jpg,JPG,JPEG,PNG'
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
             $event = Event::create([
                 'name'=>$request->name,
@@ -136,7 +136,7 @@ class EventController extends Controller
             $request->validate([
                 'name'=>'required',
                 'location'=>'required',
-                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG,PNG'
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
             $event->update([
                 'name'=>$request->name,

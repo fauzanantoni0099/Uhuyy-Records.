@@ -57,7 +57,7 @@ class AlbumController extends Controller
                 'name'=>'required',
                 'release'=>'required',
                 'artist_id'=>'required',
-                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG'
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
 
             $album = Album::create([
@@ -143,7 +143,7 @@ class AlbumController extends Controller
                 'name'=>'required',
                 'release'=>'required',
                 'artist_id'=>'required',
-                'name_path'=>'jpeg,png,jpg,JPG,JPEG',
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048',
             ],$message);
             $album->update([
                 'name'=>$request->name,

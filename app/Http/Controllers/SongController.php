@@ -59,7 +59,7 @@ class SongController extends Controller
             $request->validate([
                 'artist_id'=>'required',
                 'title'=>'required',
-                'name_path'=>'required|mimes:mp3,mp4'
+                'name_path'=>'required|mimes:mp3,mp4|max:25600'
             ],$message);
             $song = Song::create([
                 'artist_id'=>$request->artist_id,
@@ -142,7 +142,7 @@ class SongController extends Controller
             $request->validate([
                 'artist_id'=>'required',
                 'title'=>'required',
-                'name_path'=>'mimes:mp3,mp4'
+                'name_path'=>'mimes:mp3,mp4|max:25600'
             ],$message);
             $song->update([
                 'artist_id'=>$request->artist_id,
