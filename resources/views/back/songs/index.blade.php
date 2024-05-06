@@ -164,7 +164,7 @@
                         <div class="form-group col-md-8">
                             <label>Upload Song</label>
                             <input type="file" name="name_path" class="form-control">
-                            <label style="font-size: 10px" >MAX:2048 | mp3,mp4</label>
+                            <label style="font-size: 10px" >MAX:25600 | mp3,mp4</label>
                         </div>
                 </div>
                 <div class="modal-footer">
