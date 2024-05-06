@@ -134,12 +134,13 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
+//        dd($request->all());
         try {
             $message = [
                 'required'=>'Wajib Diisi!!'
             ];
             $request->validate([
-                'name_path'=>'required|mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
             $gallery->update([
                 'event_id'=>$request->input('event_id') ?: null,
