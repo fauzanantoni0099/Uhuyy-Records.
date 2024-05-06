@@ -199,6 +199,7 @@ class EventController extends Controller
                 // Hapus entri gambar dari database
                 $image->delete();
             }
+                $event->galleries()->delete();
 
             toast('Data berhasil dihapus!!','succes');
             DB::commit();
