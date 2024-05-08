@@ -20,7 +20,7 @@
                         <center>
                         <div class="blog-post-thumb mt-30">
                             @foreach($album->images as $image)
-                            <img src="/{{$image->name_path}}" alt="" width="700px">
+                            <img src="/storage/images/{{$image->name_path}}" alt="" width="700px">
                             @endforeach
                             <!-- Post Date -->
                             <div class="post-date">
@@ -54,7 +54,7 @@
                                             <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
                                                 <div class="song-thumbnail">
                                                     @foreach($album->artist->images as $image)
-                                                        <img src="/{{$image->name_path}}" alt="">
+                                                        <img src="/storage/images/{{$image->name_path}}" alt="">
                                                     @endforeach
                                                 </div>
                                                 <div class="song-play-area">
@@ -63,7 +63,7 @@
                                                     </div>
                                                     <audio preload="auto" controls>
                                                         @foreach($song->files as $file)
-                                                            <source src="/{{$file->name_path}}">
+                                                            <source src="/storage/files/{{$file->name_path}}">
                                                         @endforeach
                                                     </audio>
                                                 </div>

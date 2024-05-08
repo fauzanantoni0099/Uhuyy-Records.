@@ -79,7 +79,7 @@
                             <td>{{$song->note}}</td>
                             <td>@forelse($song->files as $file)
                                     <audio preload="auto" controls>
-                                        <source src="/{{$file->name_path}}">
+                                        <source src="/storage/files/{{$file->name_path}}">
                                     </audio>
                                 @empty
                                     <img src="/assets/files/orang.jpg" class="card-img h-100" alt="Card image">

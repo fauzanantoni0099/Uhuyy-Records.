@@ -71,12 +71,11 @@ class ArtistController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'), $fileName);
-                $fileLocation ='storage/images/'.$fileName;
 
                 if(!$artist->images()->exists())
                 {
                     $artist->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$artist->id,
                         'imageable_type'=>Artist::class
                     ]);
@@ -84,7 +83,7 @@ class ArtistController extends Controller
                 else
                 {
                     $artist->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$artist->id,
                         'imageable_type'=>Artist::class
                     ]);
@@ -156,12 +155,11 @@ class ArtistController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'), $fileName);
-                $fileLocation ='storage/images/'.$fileName;
 
                 if(!$artist->images()->exists())
                 {
                     $artist->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$artist->id,
                         'imageable_type'=>Artist::class
                     ]);
@@ -169,7 +167,7 @@ class ArtistController extends Controller
                 else
                 {
                     $artist->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$artist->id,
                         'imageable_type'=>Artist::class
                     ]);
@@ -207,9 +205,17 @@ class ArtistController extends Controller
                 // Hapus entri gambar dari database
                 $image->delete();
             }
+            $artist->images()->delete();
+            $artist->albums()->delete();
+            $songs = $artist->songs;
+            foreach ($songs as $song){
+                $song->files()->delete();
+            }
+            $artist->songs()->delete();
+
             toast('Data berhasil dihapus','success');
             DB::commit();
-            return redirect()->route('book.index',$artist);
+            return redirect()->route('artist.index',$artist);
         }
         catch (\Exception $exception)
         {

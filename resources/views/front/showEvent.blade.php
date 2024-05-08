@@ -16,7 +16,7 @@
                     <div class=" col-lg-6 single-album-item">
                         <div class="single-album">
                             @foreach($gallery->images as $image)
-                            <img src="/{{$image->name_path}}" alt="">
+                            <img src="/storage/images/{{$image->name_path}}" alt="">
                             @endforeach
                         </div>
                     </div>

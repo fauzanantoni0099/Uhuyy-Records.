@@ -17,7 +17,7 @@
                     <div class=" col-lg-3 single-album-item">
                         <div class="single-album">
                             @foreach($album->images as $image)
-                            <img src="/{{$image->name_path}}" alt="">
+                            <img src="/storage/images/{{$image->name_path}}" alt="">
                             @endforeach
                             <div class="album-info">
                                 <a href="{{route('show',$album)}}">

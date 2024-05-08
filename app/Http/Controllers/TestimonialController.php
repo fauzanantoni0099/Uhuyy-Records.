@@ -65,16 +65,15 @@ class TestimonialController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'),$fileName);
-                $fileLocation = 'storage/images/'.$fileName;
 
                 if (!$testimonial->images()->exists()){
                     $testimonial->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$testimonial->id,
                         'imageable_type'=>Testimonial::class
                     ]);
                     $testimonial->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$testimonial->id,
                         'imageable_type'=>Testimonial::class
                     ]);
@@ -142,18 +141,17 @@ class TestimonialController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'),$fileName);
-                $fileLocation = 'storage/images/'.$fileName;
 
                 if (!$testimonial->images()->exists()){
                     $testimonial->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$testimonial->id,
                         'imageable_type'=>Testimonial::class
                     ]);
                 }
                 else{
                     $testimonial->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$testimonial->id,
                         'imageable_type'=>Testimonial::class
                     ]);

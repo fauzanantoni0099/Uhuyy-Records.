@@ -67,12 +67,11 @@ class EventController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'),$fileName);
-                $fileLocation = 'storage/images/'.$fileName;
 
                 if (!$event->images()->exists())
                 {
                     $event->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$event->id,
                         'imageable_type'=>Event::class
                     ]);
@@ -80,7 +79,7 @@ class EventController extends Controller
                 else
                 {
                     $event->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$event->id,
                         'imageable_type'=>Event::class
                     ]);
@@ -149,12 +148,11 @@ class EventController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'),$fileName);
-                $fileLocation = 'storage/images/'.$fileName;
 
                 if (!$event->images()->exists())
                 {
                     $event->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$event->id,
                         'imageable_type'=>Event::class
                     ]);
@@ -162,7 +160,7 @@ class EventController extends Controller
                 else
                 {
                     $event->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$event->id,
                         'imageable_type'=>Event::class
                     ]);

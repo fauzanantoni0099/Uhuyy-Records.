@@ -72,12 +72,11 @@ class SongController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/files'),$fileName);
-                $fileLocation = 'storage/files/'.$fileName;
 
                 if (!$song->files()->exists())
                 {
                     $song->files()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'fileable_id'=>$song->id,
                         'fileable_type'=>Song::class
                     ]);
@@ -85,7 +84,7 @@ class SongController extends Controller
                 else
                 {
                     $song->files()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'fileable_id'=>$song->id,
                         'fileable_type'=>Song::class
                     ]);
@@ -155,12 +154,11 @@ class SongController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/files'),$fileName);
-                $fileLocation = 'storage/files/'.$fileName;
 
                 if (!$song->files()->exists())
                 {
                     $song->files()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'fileable_id'=>$song->id,
                         'fileable_type'=>Song::class
                     ]);
@@ -168,7 +166,7 @@ class SongController extends Controller
                 else
                 {
                     $song->files()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'fileable_id'=>$song->id,
                         'fileable_type'=>Song::class
                     ]);

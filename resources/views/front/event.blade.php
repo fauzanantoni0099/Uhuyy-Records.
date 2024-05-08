@@ -19,7 +19,7 @@
                     <div class="single-event-area mb-30">
                         <div class="event-thumbnail">
                             @foreach($event->images as $image)
-                            <img src="/{{$image->name_path}}" alt="">
+                            <img src="/storage/images/{{$image->name_path}}" alt="">
                             @endforeach
                         </div>
                         <div class="event-text">

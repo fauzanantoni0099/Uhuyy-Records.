@@ -70,7 +70,7 @@
                             <td>{{\Carbon\Carbon::parse($album->release)->isoFormat('D MMM Y')}}</td>
                             <td>{{$album->artist->name}}</td>
                             <td>@forelse($album->images as $image)
-                                    <img src="/{{$image->name_path}}" class="card-img h-100" alt="Card image" style="width: 200px">
+                                    <img src="/storage/images/{{$image->name_path}}" class="card-img h-100" alt="Card image" style="width: 200px">
                                 @empty
                                     <img src="/assets/images/orang.jpg" class="card-img h-100" alt="Card image">
                                 @endforelse

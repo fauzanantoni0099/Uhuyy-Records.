@@ -71,12 +71,11 @@ class GalleryController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'), $fileName);
-                $fileLocation ='storage/images/'.$fileName;
 
                 if(!$gallery->images()->exists())
                 {
                     $gallery->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$gallery->id,
                         'imageable_type'=>Gallery::class
                     ]);
@@ -84,7 +83,7 @@ class GalleryController extends Controller
                 else
                 {
                     $gallery->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$gallery->id,
                         'imageable_type'=>Gallery::class
                     ]);
@@ -153,12 +152,11 @@ class GalleryController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'), $fileName);
-                $fileLocation ='storage/images/'.$fileName;
 
                 if(!$gallery->images()->exists())
                 {
                     $gallery->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$gallery->id,
                         'imageable_type'=>Gallery::class
                     ]);
@@ -166,7 +164,7 @@ class GalleryController extends Controller
                 else
                 {
                     $gallery->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$gallery->id,
                         'imageable_type'=>Gallery::class
                     ]);

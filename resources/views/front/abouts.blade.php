@@ -1163,7 +1163,7 @@
                                     <div class="testimonial-info d-flex align-items-center">
                                         <div class="testimonial-thumb">
                                             @foreach($testimonial->images as $image)
-                                                <img src="/{{$image->name_path}}" alt="">
+                                                <img src="/storage/images/{{$image->name_path}}" alt="">
                                             @endforeach
                                         </div>
                                         <p>{{$testimonial->name}}, {{$testimonial->job}}</p>

@@ -19,7 +19,7 @@
                         <center>
                         <div class="blog-post-thumb mt-30">
                             @foreach($artist->images as $image)
-                            <a href="#"><img src="/{{$image->name_path}}" alt="" width="700px"></a>
+                            <a href="#"><img src="/storage/images/{{$image->name_path}}" alt="" width="700px"></a>
                             @endforeach
                         </div>
                         </center>
@@ -46,7 +46,7 @@
                             <!-- Post Thumb -->
                             <div class="blog-post-thumb mt-30">
                                 @foreach($album->images as $image)
-                                    <a href="{{route('show',$album)}}"><img src="/{{$image->name_path}}" alt=""></a>
+                                    <a href="{{route('show',$album)}}"><img src="/storage/images/{{$image->name_path}}" alt=""></a>
                                 @endforeach
                             </div>
 
@@ -77,7 +77,7 @@
                         <div class="col-12 col-md-5 col-lg-4">
                             @foreach($artist->images as $image)
                                 <div class="featured-artist-thumb">
-                                    <img src="/{{$image->name_path}}" alt="">
+                                    <img src="/storage/images/{{$image->name_path}}" alt="">
                                 </div>
                             @endforeach
                         </div>
@@ -96,7 +96,7 @@
                                             </div>
                                             @foreach($song->files as $file)
                                             <audio preload="auto" controls>
-                                                <source src="/{{$file->name_path}}">
+                                                <source src="/storage/files/{{$file->name_path}}">
                                             </audio>
                                             @endforeach
                                         </div>

@@ -71,7 +71,7 @@
                             <td>{{$testimonial->job}}</td>
                             <td>{{$testimonial->note}}</td>
                             <td>@forelse($testimonial->images as $image)
-                                    <img src="/{{$image->name_path}}" class="card-img h-100" alt="Card image"
+                                    <img src="/storage/images/{{$image->name_path}}" class="card-img h-100" alt="Card image"
                                          style="width: 200px">
                                 @empty
                                     <img src="/assets/images/orang.jpg" class="card-img h-100" alt="Card image">

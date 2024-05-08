@@ -72,12 +72,12 @@ class AlbumController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'), $fileName);
-                $fileLocation ='storage/images/'.$fileName;
+
 
                 if(!$album->images()->exists())
                 {
                     $album->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$album->id,
                         'imageable_type'=>Album::class
                     ]);
@@ -85,7 +85,7 @@ class AlbumController extends Controller
                 else
                 {
                     $album->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$album->id,
                         'imageable_type'=>Album::class
                     ]);
@@ -156,12 +156,11 @@ class AlbumController extends Controller
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(storage_path('app/public/images'),$fileName);
-                $fileLocation = 'storage/images/'.$fileName;
 
                 if (!$album->images()->exists())
                 {
                     $album->images()->create([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$album->id,
                         'imageable_type'=>Album::class
                     ]);
@@ -169,7 +168,7 @@ class AlbumController extends Controller
                 else
                 {
                     $album->images()->update([
-                        'name_path'=>$fileLocation,
+                        'name_path'=>$fileName,
                         'imageable_id'=>$album->id,
                         'imageable_type'=>Album::class
                     ]);
@@ -206,6 +205,14 @@ class AlbumController extends Controller
                 // Hapus entri gambar dari database
                 $image->delete();
             }
+
+            $songs = $album->songs;
+            foreach ($songs as $song)
+            {
+                $song->files()->delete();
+            }
+            $album->songs()->delete();
+
             toast('Data berhasil dihapus!!!','success');
             DB::commit();
             return redirect()->route('album.index');

@@ -151,13 +151,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-9">
-                    <div class="ablums-text text-center mb-70">
-                        <p>Band music is a group of individuals who collaborate to create and perform music together. They can consist of several members who have different roles, such as vocalists, guitarists, bassists, drummers, and possibly other members like keyboardists or string instrument players.</p>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="row justify-content-center">--}}
+{{--                <div class="col-12 col-lg-9">--}}
+{{--                    <div class="ablums-text text-center mb-70">--}}
+{{--                        <p>Band music is a group of individuals who collaborate to create and perform music together. They can consist of several members who have different roles, such as vocalists, guitarists, bassists, drummers, and possibly other members like keyboardists or string instrument players.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <div class="row">
                 <div class="col-12">
@@ -166,7 +166,7 @@
                         @foreach($artists as $artist)
                         <div class="single-album">
                             @foreach($artist->images as $image)
-                            <img src="/{{$image->name_path}}" alt="">
+                            <img src="/storage/images/{{$image->name_path}}" alt="">
                             @endforeach
                             <div class="album-info">
                                 <a href="{{route('showArtist',$artist)}}">
@@ -200,7 +200,7 @@
                         @foreach($albums as $album)
                             <div class="single-album">
                                 @foreach($album->images as $image)
-                                    <img src="/{{$image->name_path}}" alt="">
+                                    <img src="/storage/images/{{$image->name_path}}" alt="">
                                 @endforeach
                                 <div class="album-info">
                                     <a href="{{route('show',$album)}}">
@@ -226,7 +226,7 @@
                 <div class="col-12 col-md-5 col-lg-4">
                     @foreach($song->artist->images as $image)
                     <div class="featured-artist-thumb">
-                        <img src="/{{$image->name_path}}" alt="">
+                        <img src="/storage/images/{{$image->name_path}}" alt="">
                     </div>
                     @endforeach
                 </div>
@@ -244,7 +244,7 @@
                             </div>
                             @foreach($song->files as $file)
                                 <audio preload="auto" controls>
-                                    <source src="/{{$file->name_path}}">
+                                    <source src="/storage/files/{{$file->name_path}}">
                                 </audio>
                             @endforeach
                         </div>
@@ -272,7 +272,7 @@
                                 <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms">
                                     <div class="thumbnail">
                                         @foreach($album->images as $image)
-                                            <img src="/{{$image->name_path}}" alt="">
+                                            <img src="/storage/images/{{$image->name_path}}" alt="">
                                         @endforeach
                                     </div>
                                     <div class="content-">
@@ -300,7 +300,7 @@
                                     <div class="first-part d-flex align-items-center">
                                         @foreach($song->artist->images as $image)
                                             <div class="thumbnail">
-                                                <img src="/{{$image->name_path}}" alt="">
+                                                <img src="/storage/images/{{$image->name_path}}" alt="">
                                             </div>
                                         @endforeach
                                         <div class="content-">
@@ -310,7 +310,7 @@
                                     </div>
                                     @foreach($song->files as $file)
                                         <audio preload="auto" controls>
-                                            <source src="/{{$file->name_path}}">
+                                            <source src="/storage/files/{{$file->name_path}}">
                                         </audio>
                                     @endforeach
                                 </div>
@@ -333,7 +333,7 @@
                             <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
                                 <div class="thumbnail">
                                     @foreach($artist->images as $image)
-                                    <img src="/{{$image->name_path}}" alt="">
+                                    <img src="/storage/images/{{$image->name_path}}" alt="">
                                     @endforeach
                                 </div>
                                 <div class="content-">
