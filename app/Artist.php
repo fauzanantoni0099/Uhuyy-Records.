@@ -12,6 +12,10 @@ class Artist extends Model
     {
         return $this->hasMany(Album::class);
     }
+    public function merchandises()
+    {
+        return $this->hasMany(Merchandise::class);
+    }
     public function images()
     {
         return $this->morphMany(Image::class,'imageable');

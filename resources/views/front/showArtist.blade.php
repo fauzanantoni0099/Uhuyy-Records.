@@ -67,6 +67,34 @@
                 @endforeach
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                @foreach($artist->merchandises as $merchandise)
+                    <div class="col-12 col-lg-4">
+
+                        <!-- Single Post Start -->
+                        <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
+                            <!-- Post Thumb -->
+                            <div class="blog-post-thumb mt-30">
+                                @foreach($merchandise->images as $image)
+                                    <img src="/storage/images/{{$image->name_path}}" alt="">
+                                @endforeach
+                            </div>
+
+                            <!-- Blog Content -->
+                            <div class="blog-content">
+                                <!-- Post Title -->
+                                <p>{{$merchandise->name}}</p>
+                                <!-- Post Meta -->
+                                <!-- Post Excerpt -->
+                                <p style="font-size: 25px">Rp. {{$merchandise->price}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </div>
     <!-- ##### Blog Area End ##### -->
     <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(/img/bg-img/vexed-2.jpg);">

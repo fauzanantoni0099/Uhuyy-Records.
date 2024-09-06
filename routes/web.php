@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function (){
         Route::resource('artist', 'ArtistController');
         Route::resource('song', 'SongController');
         Route::resource('album', 'AlbumController');
+        Route::resource('merchandise', 'MerchandiseController');
         Route::resource('gallery', 'GalleryController');
         Route::resource('event', 'EventController');
         Route::resource('testimonial', 'TestimonialController');

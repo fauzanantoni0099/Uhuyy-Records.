@@ -92,6 +92,7 @@
                         <ul class="vertical-submenu">
                             <li><a href="{{route('artist.index')}}"><i class="mdi mdi-circle"></i>Artist</a></li>
                             <li><a href="{{route('album.index')}}"><i class="mdi mdi-circle"></i>Albums</a></li>
+                            <li><a href="{{route('merchandise.index')}}"><i class="mdi mdi-circle"></i>Merchandises</a></li>
                             <li><a href="{{route('song.index')}}"><i class="mdi mdi-circle"></i>Songs</a></li>
                         </ul>
                     </li>
