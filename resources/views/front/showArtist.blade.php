@@ -67,6 +67,11 @@
                 @endforeach
             </div>
         </div>
+        <div class="bradcumbContent">
+            <center>
+            <h2>Merchandise</h2>
+            </center>
+        </div>
         <div class="container">
             <div class="row">
                 @foreach($artist->merchandises as $merchandise)
