@@ -61,7 +61,7 @@
                                                     <div class="song-name">
                                                         <p>{{$song->title}}</p>
                                                     </div>
-                                                    <audio preload="auto" controls>
+                                                    <audio class="audio-player" id="audio-{{$index}}" preload="auto" controls>
                                                         @foreach($song->files as $file)
                                                             <source src="/storage/files/{{$file->name_path}}">
                                                         @endforeach
@@ -78,6 +78,27 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ambil semua elemen audio
+            const audioPlayers = document.querySelectorAll('.audio-player');
+            let currentAudio = null;
+
+            // Tambahkan event listener pada setiap elemen audio
+            audioPlayers.forEach(audio => {
+                audio.addEventListener('play', function() {
+                    // Hentikan audio lain jika ada
+                    if (currentAudio && currentAudio !== this) {
+                        currentAudio.pause();
+                        currentAudio.currentTime = 0; // Reset posisi ke awal
+                    }
+                    // Simpan audio yang sedang diputar
+                    currentAudio = this;
+                });
+            });
+        });
+
+    </script>
     <!-- ##### Blog Area End ##### -->
 
     <!-- ##### Contact Area Start ##### -->
