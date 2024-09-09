@@ -308,8 +308,8 @@
                                             <p>{{$song->artist->name}}</p>
                                         </div>
                                     </div>
-                                    @foreach($song->files as $file)
-                                        <audio preload="auto" controls>
+                                    @foreach($song->files as $index => $file)
+                                        <audio class="audio-player" id="audio-{{$index}}" preload="auto" controls>
                                             <source src="/storage/files/{{$file->name_path}}">
                                         </audio>
                                     @endforeach
@@ -430,6 +430,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Uhuyy
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ambil semua elemen audio
+            const audioPlayers = document.querySelectorAll('.audio-player');
+            let currentAudio = null;
+
+            // Tambahkan event listener pada setiap elemen audio
+            audioPlayers.forEach(audio => {
+                audio.addEventListener('play', function() {
+                    // Hentikan audio lain jika ada
+                    if (currentAudio && currentAudio !== this) {
+                        currentAudio.pause();
+                        currentAudio.currentTime = 0; // Reset posisi ke awal
+                    }
+                    // Simpan audio yang sedang diputar
+                    currentAudio = this;
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>
