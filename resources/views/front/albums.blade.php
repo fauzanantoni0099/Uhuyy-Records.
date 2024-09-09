@@ -61,11 +61,11 @@
                                                     <div class="song-name">
                                                         <p>{{$song->title}}</p>
                                                     </div>
+                                                    @foreach($song->files as $index => $file)
                                                     <audio class="audio-player" id="audio-{{$index}}" preload="auto" controls>
-                                                        @foreach($song->files as $file)
                                                             <source src="/storage/files/{{$file->name_path}}">
-                                                        @endforeach
                                                     </audio>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
