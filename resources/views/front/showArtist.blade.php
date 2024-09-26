@@ -92,7 +92,7 @@
                                 <p>{{$merchandise->name}}</p>
                                 <!-- Post Meta -->
                                 <!-- Post Excerpt -->
-                                <p style="font-size: 25px">Rp. {{$merchandise->price}}</p>
+                                <p style="font-size: 25px">Rp. {{number_format($merchandise->price, 0,',','.')}}</p>
                             </div>
                         </div>
 
